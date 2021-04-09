@@ -7,11 +7,11 @@ interface Disciplina {
     date: string;
 }
 
-const Inicio: React.FC = () => {
-    const [nome, setName] = useState('');
-    const [disciplina, setDisciplina] = useState('');
-    const [time, setTime] = useState('');
-    const [date, setDate] = useState('');
+const Home: React.FC = () => {
+    const [nome, setnome] = useState('');
+    const [hora, sethora] = useState('');
+    const [materia, setmateria] = useState('');
+    const [data, setdata] = useState('');
 
     function submitForm() {
         return 0;
@@ -19,54 +19,54 @@ const Inicio: React.FC = () => {
     return (
         <div>
             <form onSubmit={submitForm}>
-                <div className="form-imput">
-                    <strong>Disciplina</strong>
+                <div className="entrada form">
+                    <h1>Nome</h1>
                     <input
                         placeholder="Digite o Nome"
-                        value={name}
+                        value={nome}
                         onChange={(e: any) => {
-                            setName(e.target.value);
+                            setnome(e.target.value);
                         }}
                     />
                 </div>
 
-                <div className="form-imput">
-                    <strong>Professor</strong>
+                <div className="entrada form">
+                    <h1>Materia</h1>
                     <input
-                        placeholder="Digite o nome"
-                        value={name}
                         onChange={(e: any) => {
-                            setName(e.target.value);
+                            setmateria(e.target.value);
                         }}
+                        placeholder="Digite a materia"
+                        value={materia}
                     />
                 </div>
-                <div className="form-imput">
-                    <strong>Dia da Semana</strong>
+                <div className="entrada form">
+                    <h1>Dia da Semana</h1>
                     <input
+                        onChange={(e: any) => {
+                            setdata(e.target.value);
+                        }}
                         placeholder="Digite os dias da semana"
-                        value={date}
-                        onChange={(e: any) => {
-                            setName(e.target.value);
-                        }}
+                        value={data}
                     />
                 </div>
 
-                <div className="form-imput">
-                    <strong>Horário</strong>
+                <div className="entrada form">
+                    <h1>Horário</h1>
                     <input
-                        placeholder="Digite o horário de trabalho"
-                        value={time}
                         onChange={(e: any) => {
-                            setName(e.target.value);
+                            sethora(e.target.value);
                         }}
+                        value={hora}
+                        placeholder="Digite o horário de trabalho"
                     />
                 </div>
                 <div>
                     <button type="submit">Enviar</button>
                 </div>
             </form>
-            <div />
-  );
+        </div>
+    );
 };
 
 export default Home;
